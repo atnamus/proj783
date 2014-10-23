@@ -1,0 +1,80 @@
++--------+---------------------------------------------------+-----------------------------+------------------------------------------------------------+--------------------+---------------+
+| Domain | URI                                               | Name                        | Action                                                     | Before Filters     | After Filters |
++--------+---------------------------------------------------+-----------------------------+------------------------------------------------------------+--------------------+---------------+
+|        | GET|HEAD _debugbar/open                           | debugbar.openhandler        | Barryvdh\Debugbar\Controllers\OpenHandlerController@handle |                    |               |
+|        | GET|HEAD _debugbar/assets/stylesheets             | debugbar.assets.css         | Barryvdh\Debugbar\Controllers\AssetController@css          |                    |               |
+|        | GET|HEAD _debugbar/assets/javascript              | debugbar.assets.js          | Barryvdh\Debugbar\Controllers\AssetController@js           |                    |               |
+|        | GET|HEAD /                                        | home                        | HomeController@getIndex                                    |                    |               |
+|        | GET|HEAD login                                    | user-login                  | LoginController@getLogin                                   |                    |               |
+|        | POST login                                        |                             | LoginController@postLogin                                  |                    |               |
+|        | GET|HEAD admin                                    | admin-home                  | AdminDashboardController@getIndex                          | admin_b1b79d       |               |
+|        | GET|HEAD admin/dashboard                          | admin-home                  | AdminDashboardController@getIndex                          | admin_b1b79d       |               |
+|        | GET|HEAD admin/account                            | admin-profile               | AdminDashboardController@getAccount                        | admin_b1b79d       |               |
+|        | POST admin/account                                | update-admin-profile        | AdminDashboardController@postAccount                       | admin_b1b79d       |               |
+|        | POST admin/resto-management                       | resto-management            | AdminDashboardController@postAccount                       | admin_b1b79d       |               |
+|        | GET|HEAD admin/restaurant                         | admin.restaurant.index      | AdminRestaurantController@index                            | admin_b1b79d       |               |
+|        | GET|HEAD admin/restaurant/create                  | admin.restaurant.create     | AdminRestaurantController@create                           | admin_b1b79d       |               |
+|        | POST admin/restaurant                             | admin.restaurant.store      | AdminRestaurantController@store                            | admin_b1b79d       |               |
+|        | GET|HEAD admin/restaurant/{restaurant}            | admin.restaurant.show       | AdminRestaurantController@show                             | admin_b1b79d       |               |
+|        | GET|HEAD admin/restaurant/{restaurant}/edit       | admin.restaurant.edit       | AdminRestaurantController@edit                             | admin_b1b79d       |               |
+|        | PUT admin/restaurant/{restaurant}                 | admin.restaurant.update     | AdminRestaurantController@update                           | admin_b1b79d       |               |
+|        | PATCH admin/restaurant/{restaurant}               |                             | AdminRestaurantController@update                           | admin_b1b79d       |               |
+|        | DELETE admin/restaurant/{restaurant}              | admin.restaurant.destroy    | AdminRestaurantController@destroy                          | admin_b1b79d       |               |
+|        | GET|HEAD admin/menu-category                      | admin.menu-category.index   | AdminMenucategoryController@index                          | admin_b1b79d       |               |
+|        | GET|HEAD admin/menu-category/create               | admin.menu-category.create  | AdminMenucategoryController@create                         | admin_b1b79d       |               |
+|        | POST admin/menu-category                          | admin.menu-category.store   | AdminMenucategoryController@store                          | admin_b1b79d       |               |
+|        | GET|HEAD admin/menu-category/{menu_category}      | admin.menu-category.show    | AdminMenucategoryController@show                           | admin_b1b79d       |               |
+|        | GET|HEAD admin/menu-category/{menu_category}/edit | admin.menu-category.edit    | AdminMenucategoryController@edit                           | admin_b1b79d       |               |
+|        | PUT admin/menu-category/{menu_category}           | admin.menu-category.update  | AdminMenucategoryController@update                         | admin_b1b79d       |               |
+|        | PATCH admin/menu-category/{menu_category}         |                             | AdminMenucategoryController@update                         | admin_b1b79d       |               |
+|        | DELETE admin/menu-category/{menu_category}        | admin.menu-category.destroy | AdminMenucategoryController@destroy                        | admin_b1b79d       |               |
+|        | GET|HEAD admin/user                               | admin.user.index            | AdminUserController@index                                  | admin_b1b79d       |               |
+|        | GET|HEAD admin/user/create                        | admin.user.create           | AdminUserController@create                                 | admin_b1b79d       |               |
+|        | POST admin/user                                   | admin.user.store            | AdminUserController@store                                  | admin_b1b79d       |               |
+|        | GET|HEAD admin/user/{user}                        | admin.user.show             | AdminUserController@show                                   | admin_b1b79d       |               |
+|        | GET|HEAD admin/user/{user}/edit                   | admin.user.edit             | AdminUserController@edit                                   | admin_b1b79d       |               |
+|        | PUT admin/user/{user}                             | admin.user.update           | AdminUserController@update                                 | admin_b1b79d       |               |
+|        | PATCH admin/user/{user}                           |                             | AdminUserController@update                                 | admin_b1b79d       |               |
+|        | DELETE admin/user/{user}                          | admin.user.destroy          | AdminUserController@destroy                                | admin_b1b79d       |               |
+|        | GET|HEAD admin/settings                           | admin.settings.index        | AdminSettingsController@index                              | admin_b1b79d       |               |
+|        | GET|HEAD admin/settings/create                    | admin.settings.create       | AdminSettingsController@create                             | admin_b1b79d       |               |
+|        | POST admin/settings                               | admin.settings.store        | AdminSettingsController@store                              | admin_b1b79d       |               |
+|        | GET|HEAD admin/settings/{settings}                | admin.settings.show         | AdminSettingsController@show                               | admin_b1b79d       |               |
+|        | GET|HEAD admin/settings/{settings}/edit           | admin.settings.edit         | AdminSettingsController@edit                               | admin_b1b79d       |               |
+|        | PUT admin/settings/{settings}                     | admin.settings.update       | AdminSettingsController@update                             | admin_b1b79d       |               |
+|        | PATCH admin/settings/{settings}                   |                             | AdminSettingsController@update                             | admin_b1b79d       |               |
+|        | DELETE admin/settings/{settings}                  | admin.settings.destroy      | AdminSettingsController@destroy                            | admin_b1b79d       |               |
+|        | GET|HEAD admin/page                               | admin.page.index            | AdminPageController@index                                  | admin_b1b79d       |               |
+|        | GET|HEAD admin/page/create                        | admin.page.create           | AdminPageController@create                                 | admin_b1b79d       |               |
+|        | POST admin/page                                   | admin.page.store            | AdminPageController@store                                  | admin_b1b79d       |               |
+|        | GET|HEAD admin/page/{page}                        | admin.page.show             | AdminPageController@show                                   | admin_b1b79d       |               |
+|        | GET|HEAD admin/page/{page}/edit                   | admin.page.edit             | AdminPageController@edit                                   | admin_b1b79d       |               |
+|        | PUT admin/page/{page}                             | admin.page.update           | AdminPageController@update                                 | admin_b1b79d       |               |
+|        | PATCH admin/page/{page}                           |                             | AdminPageController@update                                 | admin_b1b79d       |               |
+|        | DELETE admin/page/{page}                          | admin.page.destroy          | AdminPageController@destroy                                | admin_b1b79d       |               |
+|        | GET|HEAD resto                                    | resto-home                  | RestoDashboardController@getIndex                          | resto_owner_f5e271 |               |
+|        | GET|HEAD resto/dashboard                          | resto-home                  | RestoDashboardController@getIndex                          | resto_owner_f5e271 |               |
+|        | GET|HEAD resto/account                            | resto-profile               | RestoDashboardController@getAccount                        | resto_owner_f5e271 |               |
+|        | POST resto/account                                | update-resto-profile        | RestoDashboardController@postAccount                       | resto_owner_f5e271 |               |
+|        | POST resto/resto-management                       | resto-management            | RestoDashboardController@postAccount                       | resto_owner_f5e271 |               |
+|        | GET|HEAD resto/restaurant                         | my-restaurant               | RestoRestaurantController@getRestaurant                    | resto_owner_f5e271 |               |
+|        | POST resto/update/restaurant                      | update-my-restaurant        | RestoRestaurantController@postRestaurant                   | resto_owner_f5e271 |               |
+|        | GET|HEAD resto/user                               | resto.user.index            | AdminUserController@index                                  | resto_owner_f5e271 |               |
+|        | GET|HEAD resto/user/create                        | resto.user.create           | AdminUserController@create                                 | resto_owner_f5e271 |               |
+|        | POST resto/user                                   | resto.user.store            | AdminUserController@store                                  | resto_owner_f5e271 |               |
+|        | GET|HEAD resto/user/{user}                        | resto.user.show             | AdminUserController@show                                   | resto_owner_f5e271 |               |
+|        | GET|HEAD resto/user/{user}/edit                   | resto.user.edit             | AdminUserController@edit                                   | resto_owner_f5e271 |               |
+|        | PUT resto/user/{user}                             | resto.user.update           | AdminUserController@update                                 | resto_owner_f5e271 |               |
+|        | PATCH resto/user/{user}                           |                             | AdminUserController@update                                 | resto_owner_f5e271 |               |
+|        | DELETE resto/user/{user}                          | resto.user.destroy          | AdminUserController@destroy                                | resto_owner_f5e271 |               |
+|        | GET|HEAD users/create                             |                             | UsersController@create                                     |                    |               |
+|        | POST users                                        |                             | UsersController@store                                      |                    |               |
+|        | GET|HEAD users/login                              |                             | UsersController@login                                      |                    |               |
+|        | POST users/login                                  |                             | UsersController@doLogin                                    |                    |               |
+|        | GET|HEAD users/confirm/{code}                     |                             | UsersController@confirm                                    |                    |               |
+|        | GET|HEAD users/forgot_password                    |                             | UsersController@forgotPassword                             |                    |               |
+|        | POST users/forgot_password                        |                             | UsersController@doForgotPassword                           |                    |               |
+|        | GET|HEAD users/reset_password/{token}             |                             | UsersController@resetPassword                              |                    |               |
+|        | POST users/reset_password                         |                             | UsersController@doResetPassword                            |                    |               |
+|        | GET|HEAD users/logout                             |                             | UsersController@logout                                     |                    |               |
++--------+---------------------------------------------------+-----------------------------+------------------------------------------------------------+--------------------+---------------+

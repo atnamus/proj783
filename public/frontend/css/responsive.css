@@ -1,0 +1,118 @@
+@media (max-width: 1366px){
+.custom-wrapper, 
+.new_header_wrapper{ max-width: 1100px;}
+}
+@media (min-width: 1299px){
+.category_listing li div{ margin-left:65px; font-size:13px;}
+.category_listing li i img{ background-size:100%; max-width:46px;}
+.category_listing li i{ width:40px;}
+.category_listing li a{ font-size:16px;}
+.site_footer{ padding:20px 10px;}
+
+}
+@media (max-width: 1299px){
+
+
+}
+@media (max-width: 1024px){
+#login-btn{ background: none; height: 72px; width: 95px; top: 20px; left: -82px;}
+.icon__menu{ margin: 0;}
+.btn_container_1 #login-btn{ background: none; height: 72px; width: 70px; top: 20px;}
+.btn_container_1 #login-btn .icon__menu{ margin: 0;}
+.right_slide_holder{ padding-left: 65px;}
+
+}
+
+@media only screen and (min-width: 960px) and (max-width:1069px) {
+
+.category_listing li div{ margin-left:65px; font-size:13px;}
+.category_listing li i img{ background-size:100%; max-width:46px;}
+.category_listing li i{ width:40px;}
+.category_listing li a{ font-size:16px;}
+.site_footer{ padding:20px 10px;}
+.custom-wrapper, 
+.new_header_wrapper{ max-width: 780px;}
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+.category_listing li{ float:none; margin:10px; width:auto;}
+.site_footer{ padding:20px 10px;}
+
+
+.container{ width:60%;}
+.custom-wrapper, .new_header_wrapper {
+    max-width: 530px;
+}
+}
+
+@media only screen and (max-width: 767px) {
+.logo.pull-right{ float: none!important; margin: 0 auto 20px;}
+.custom-wrapper, .new_header_wrapper{ max-width: 100%;}
+.home_social_sectoin.order_page{ margin-bottom: 50px;}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+.home_logo{ max-width: 300px; height: auto;}
+.contact_form{ padding: 25px;}
+.contact_form .btn{ font-size: 30px; line-height: 26px; height: 50px;}
+.home_seacrh{ padding:0px 10px;}
+.category_listing li{ float:none; margin:10px; width:auto;}
+.site_footer{ padding:20px 10px;}
+
+#login-btn{ left:-100px; background-size:70%; height:190px; top:80px;}
+.icon__menu{ margin: 62px 0 0 3px;}
+.right_slide_holder{ padding-left:80px;}
+.btn_container_1 #login-btn{ background-size:90%; height:200px; right:-43px; top:80px;}
+.slide_cont .home_logo{ max-width:120px; margin-bottom:0px;}
+.panel-body .btn{ height:30px; font-size:25px; line-height:10px;}
+.panel-body .form-control{ height:30px;}
+.form-group{ margin-bottom:5px;}
+.order_single h4, .order_single h4 a, .order_single a, .order_single p{ font-size: 18px; line-height: 21px;}
+.left_slide_cont{ margin: 0 85px 0 0;}
+.order_listing ul li{ padding: 20px 20px 5px 50px; background-position: 15px 22px;}
+.home_social_sectoin.order_page{ margin-right: 30px; text-align: center;}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+
+.home_logo{ max-width: 200px; height: auto;}
+.thankyou_text{ max-width: 150px; margin: 0 auto;}
+.thankyou_text img{ width: 100%; display: block;}
+.contact_form{ padding: 20px;}
+.contact_form .btn{ font-size: 22px; line-height: 26px; height: 50px;}
+.order_btn{ margin: 25px 0 26px;}
+.order_btn .order_here{ padding: 15px 30px; font-size: 30px; height: 50px; line-height: 30px;}
+.home_seacrh{ padding:0px 10px;}
+.home_seacrh{ margin-bottom:40px;}
+.category_listing li{ float:none; margin:10px; width:auto;}
+.social_list li{ margin: 0 10px 15px;}
+.site_footer{ padding:20px 10px;}
+
+
+
+#login-btn{ left:-100px; background-size:70%; height:190px;}
+.icon__menu{ margin: 62px 0 0 3px;}
+.right_slide_holder{ padding-left:80px;}
+.btn_container_1 #login-btn{ background-size:90%; height:200px; right:-43px;}
+.slide_cont .home_logo{ max-width:180px;}
+.panel-body .btn{ height:45px; font-size:30px; line-height:25px;}
+.panel-body .form-control{ height:45px;}
+.slide_cont h1 { display:none;}
+
+.order_single h4, .order_single h4 a, .order_single a, .order_single p{ font-size: 18px; line-height: 21px;}
+.left_slide_cont{ margin: 0 85px 0 0;}
+.order_listing ul li{ padding: 20px 20px 5px 50px; background-position: 15px 22px;}
+.home_social_sectoin.order_page{ margin-right: 30px; text-align: center;}
+.order_now_header .col-xs-6{ width: 100%;}
+.order_now_header{ padding: 26px 25px 30px;}
+.order_now_header .form-control{ height: 35px;}
+.with_icon_input{ margin: 0 0 10px;}
+.search .fa, 
+.filter .fa{ font-size: 14px;}
+.order_now_header label{ display: none;}
+.order_listing{ padding: 15px;}
+.order_single h4, .order_single h4 a, .order_single a, .order_single p{ font-size: 14px; line-height: 18px;}
+}
+
