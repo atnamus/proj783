@@ -4,14 +4,14 @@
         <div class="portlet box {{$_theme['portlet_colour']}} ">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-edit"></i> User
+                    <i class="fa fa-edit"></i> Users
                 </div>
             </div>
             <div class="portlet-body ">
                 <div class="table-toolbar">
                     <div class="btn-group pull-right">
                         <a href="{{route('admin.user.create')}}" class="btn green">
-                            Add New <i class="fa fa-plus"></i>
+                            Add New User <i class="fa fa-plus"></i>
                         </a>
                     </div><div class="clearfix"></div>
                 </div>
@@ -38,7 +38,7 @@
                                     <td>{{$row->last_login}}</td>                                    
                                     <td>{{$row->created_at}}</td>                                    
                                     <td rowspan="1" colspan="1">
-                                        {{--btTable::edit(route('admin.user.edit',$row->id))--}}
+                                        {{btTable::edit(route('admin.user.edit',$row->id))}}
                                         {{-- User can't suicide --}}
                                         @if(Auth::id()!=$row->id)
                                         {{btTable::delete(route('admin.user.destroy',$row->id))}}    

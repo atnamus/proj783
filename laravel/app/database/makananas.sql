@@ -3,18 +3,12 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2014 at 04:01 PM
+-- Generation Time: Oct 27, 2014 at 08:34 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `makananas`
@@ -33,14 +27,15 @@ CREATE TABLE IF NOT EXISTS `site_assigned_roles` (
   PRIMARY KEY (`id`),
   KEY `assigned_roles_user_id_foreign` (`user_id`),
   KEY `assigned_roles_role_id_foreign` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `site_assigned_roles`
 --
 
 INSERT INTO `site_assigned_roles` (`id`, `user_id`, `role_id`) VALUES
-(1, 1, 1);
+(1, 1, 1),
+(2, 20, 5);
 
 -- --------------------------------------------------------
 
@@ -87,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `site_login_details` (
   `ip` varchar(100) NOT NULL,
   `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=127 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=131 ;
 
 --
 -- Dumping data for table `site_login_details`
@@ -219,7 +214,11 @@ INSERT INTO `site_login_details` (`id`, `user_id`, `device`, `platform`, `browse
 (123, 20, 'desktop', 'Windows', 'Firefox', '34.0', 'fe80::a871:4c9f:2024:e3d0', '2014-10-22 13:04:44'),
 (124, 20, 'desktop', 'Windows', 'Firefox', '34.0', 'fe80::a871:4c9f:2024:e3d0', '2014-10-22 13:04:44'),
 (125, 20, 'desktop', 'Windows', 'Firefox', '34.0', 'fe80::a871:4c9f:2024:e3d0', '2014-10-22 13:10:57'),
-(126, 20, 'desktop', 'Windows', 'Firefox', '34.0', 'fe80::a871:4c9f:2024:e3d0', '2014-10-22 13:10:57');
+(126, 20, 'desktop', 'Windows', 'Firefox', '34.0', 'fe80::a871:4c9f:2024:e3d0', '2014-10-22 13:10:57'),
+(127, 1, 'desktop', 'Windows', 'Chrome', '38.0.2125.104', 'fe80::a871:4c9f:2024:e3d0', '2014-10-27 06:41:05'),
+(128, 1, 'desktop', 'Windows', 'Chrome', '38.0.2125.104', 'fe80::a871:4c9f:2024:e3d0', '2014-10-27 06:41:05'),
+(129, 1, 'desktop', 'Windows', 'Chrome', '38.0.2125.104', 'fe80::a871:4c9f:2024:e3d0', '2014-10-27 12:38:11'),
+(130, 1, 'desktop', 'Windows', 'Chrome', '38.0.2125.104', 'fe80::a871:4c9f:2024:e3d0', '2014-10-27 12:38:11');
 
 -- --------------------------------------------------------
 
@@ -372,7 +371,7 @@ CREATE TABLE IF NOT EXISTS `site_restaurant` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_site_restaurant_site_users1_idx` (`owner_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -394,7 +393,7 @@ CREATE TABLE IF NOT EXISTS `site_restaurant_menu` (
   PRIMARY KEY (`id`),
   KEY `fk_site_restaurant_menu_site_restaurant1_idx` (`restaurant_id`),
   KEY `fk_site_menu_site_menu_category1_idx` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -493,8 +492,60 @@ CREATE TABLE IF NOT EXISTS `site_users` (
 --
 
 INSERT INTO `site_users` (`id`, `username`, `email`, `name`, `password`, `phone`, `address`, `confirmation_code`, `remember_token`, `confirmed`, `last_login`, `created_at`, `updated_at`, `status`, `deleted_at`) VALUES
-(1, 'admin', 'admin@infoway.us', '', '$2y$10$ZeSFaXdy2AuqUn81VsQljek0xtRBPZ9K.IBZg0fQCi1t5ZxosoJo2', '', '', '', 'agdt5MZOFto41s7kMzZFqFkugLRoNPcdA2g3AidVWHeeb5Zoie8TFwFi49Kp', 1, '2014-10-22 06:33:25', '2014-09-25 07:56:12', '2014-10-22 06:33:25', 1, NULL),
-(20, 'tarun', 'tarun@yopmail.com', 'tarun', '$2y$10$Pze.LNsqCbZ/UdwQR7ogaOxtrDn06M.E8a.PPsTl2c1.VVrPcGPIG', '', '', '', 'pWmHv8vXJSC48uUL4cZopOaHMqwqph4vrQCb2bqFHsoNmdpsx3oXZesnSQM7', 1, '2014-10-22 07:40:57', '2014-10-22 07:33:40', '2014-10-22 07:41:14', 1, NULL);
+(1, 'admin', 'admin@infoway.us', '', '$2y$10$ZeSFaXdy2AuqUn81VsQljek0xtRBPZ9K.IBZg0fQCi1t5ZxosoJo2', '', '', '', 'agdt5MZOFto41s7kMzZFqFkugLRoNPcdA2g3AidVWHeeb5Zoie8TFwFi49Kp', 1, '2014-10-27 07:08:11', '2014-09-25 07:56:12', '2014-10-27 07:08:11', 1, NULL),
+(20, 'tarun', 'sumanta.ghosh@infoway.us', 'tarun', '$2y$10$Pze.LNsqCbZ/UdwQR7ogaOxtrDn06M.E8a.PPsTl2c1.VVrPcGPIG', '', '', '', 'pWmHv8vXJSC48uUL4cZopOaHMqwqph4vrQCb2bqFHsoNmdpsx3oXZesnSQM7', 1, '2014-10-22 07:40:57', '2014-10-22 07:33:40', '2014-10-27 09:03:19', 1, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `site_vehicles`
+--
+
+CREATE TABLE IF NOT EXISTS `site_vehicles` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `bca_token` varchar(255) DEFAULT NULL,
+  `registration_number` varchar(255) DEFAULT NULL,
+  `description` text,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `site_vehicle_drivers`
+--
+
+CREATE TABLE IF NOT EXISTS `site_vehicle_drivers` (
+  `id` bigint(20) unsigned NOT NULL,
+  `driver_id` bigint(20) unsigned NOT NULL,
+  `vehicle_id` bigint(20) unsigned NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `site_vehicle_travel_log`
+--
+
+CREATE TABLE IF NOT EXISTS `site_vehicle_travel_log` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `vehicles_id` bigint(20) unsigned NOT NULL,
+  `driver_id` bigint(20) unsigned NOT NULL COMMENT 'who create this log',
+  `order_no` bigint(20) DEFAULT NULL COMMENT 'agains which order driver need to travel this',
+  `distance` decimal(10,2) DEFAULT NULL COMMENT 'distance in KM',
+  `comment` text COMMENT 'driver''s comments regarding this deliver',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -541,7 +592,3 @@ ALTER TABLE `site_assigned_roles`
 ALTER TABLE `site_permission_role`
   ADD CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `site_permissions` (`id`),
   ADD CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `site_roles` (`id`);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

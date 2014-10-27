@@ -96,7 +96,7 @@ class AdminUserController extends AdminController {
      */
     public function edit($id) {
         breadCrumb::add('Edit', route('admin.user.edit'));
-        $model = User::find($id)->with('roles');
+        $model = User::with('roles')->where('id', '=', $id)->first();
         //$roles = User::find($id)->roles();
         //$perms = $roles->perms();
         //if model not found then back to listing page and show message
@@ -116,7 +116,49 @@ class AdminUserController extends AdminController {
      * @return Response
      */
     public function update($id) {
-        //
+        $userData = array(
+            'name' => Input::get('name'),
+            'username' => Input::get('username'),
+            'email' => Input::get('email'),
+            'phone' => Input::get('phone'),
+        );
+        $rules = array(
+            'name' => 'required',
+            'username' => 'required|unique:users,username,' . $id . ',id,deleted_at,NULL',
+            'email' => 'required|email|unique:users,email,' . $id . ',id,deleted_at,NULL',
+        );
+        $validator = Validator::make($userData, $rules);
+        if ($validator->fails()) {
+            $this->ajax_errors = $validator->getMessageBag()->toArray();
+        } else {
+            $model = User::find($id);
+            //$user = new UserRepository();
+            $userData = [
+                'name' => Input::get('name'),
+                'username' => Input::get('username'),
+                'email' => Input::get('email'),
+            ];
+            $model->name = $userData['name'];
+            $model->username = $userData['username'];
+            $model->email = $userData['email'];
+            if ($model->save()) {
+                $this->ajax_success = TRUE;
+                $this->ajax_message = "Successfully updated.";
+            } else {
+                $this->ajax_error = "Error";
+            }
+            /* if ($user = $user->_register($userData)) {
+              Mail::queue('emails.user_create_by_admin', ['user' => $user], function($message) use ($user) {
+              $message->to($user->email, $user->username)
+              ->subject('Makananas :: Admin Create your account..');
+              });
+              $this->ajax_success = TRUE;
+              $this->ajax_message = "Successfully created.";
+              } else {
+              $this->ajax_error = "Error";
+              } */
+        }
+        return $this->ajaxResponse();
     }
 
     /**

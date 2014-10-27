@@ -16,10 +16,6 @@ use HasRole;
     protected $dates = ['deleted_at'];
     protected $fillable = ['name'];
 
-    public function roles() {
-        return $this->belongsToMany('Role', 'assigned_roles');
-    }
-
     public function restaurant() {
         return $this->hasOne('Restaurant', 'owner_id');
     }
